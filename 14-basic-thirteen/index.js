@@ -2,6 +2,12 @@
 print1To255()
 Print all the integers from 1 to 255. */
 
+function print1To255() {
+  for (let i = 1; i <= 255; i++) {
+    console.log(i);
+  }
+}
+
 /* 2. Print Odds 1-255
 printOdds1To255()
 Print all odd integers from 1 to 255. */
@@ -29,6 +35,15 @@ Create an array with all the odd integers between 1 and 255 (inclusive).   */
 /* 8. Square the Values
 squareArrayVals(arr)
 Square each value in a given array, returning that same array with changed values.  */
+
+function squareArrayVals(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    arr[i] = arr[i] * arr[i];
+  }
+  return arr;
+}
+
+squareArrayVals([1, 2, 3]);
 
 /* 9. Greater than Y
 printArrayCountGreaterThanY(arr, y)
