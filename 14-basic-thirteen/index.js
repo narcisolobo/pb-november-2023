@@ -17,6 +17,8 @@ function print1To255() {
   }
 }
 
+print1To255();
+
 /*
   2. Print Odds 1-255
   printOdds1To255()
