@@ -13,11 +13,13 @@
 
 function print1to255() {
   var num = 1;
-  while (num < 255) {
+  while (num <= 255) {
     console.log(num);
     num = num + 1;
   }
 }
+
+// print1to255();
 
 /*
   2. Print Odds 1-255
@@ -35,25 +37,19 @@ function print1to255() {
 function printOdds1to255() {
   var num = 1;
   while (num <= 255) {
-    console.log(num + 2);
+    console.log(num);
+    num += 2;
   }
 }
 
-/*
-  3. Print Ints and Sum 0-255
-  printIntsAndSum0To255()
-  Print integers from 0 to 255, and with each integer,
-  print the sum so far.
+// printOdds1to255();
 
-  ex. output:
-  0 0
-  1 1
-  2 3
-  3 6
-  4 10
-  5 15
-  etc...
-  255 32640
+/*
+  3. Print Sum 0-255
+  printSum0to255()
+  Print the sum of the integers from 0 to 255.
+
+  ex. output: 32640
 */
 
 function printSum0to255() {
@@ -63,6 +59,8 @@ function printSum0to255() {
   }
   return sum;
 }
+
+// console.log(printSum0to255());
 
 /*
   4. Iterate and Print Array
@@ -77,10 +75,12 @@ function printSum0to255() {
 */
 
 function printArrayValues(arr) {
-  for (var idx = 0; idx < arr.length; arr++) {
+  for (var idx = 0; idx < arr.length; idx++) {
     console.log('array[', idx, '] = ', arr[idx]);
   }
 }
+
+// printArrayValues([42, 'pink', false]);
 
 /*
   5. Find and Print Max
@@ -95,13 +95,14 @@ function printArrayValues(arr) {
 */
 
 function printArrayMax(arr) {
+  // edge case
   if (arr.length == 0) {
     console.log('[], no max val.');
     return;
   }
 
-  var max = 0;
-  for (var idx = 0; idx < arr.length; idx++) {
+  var max = arr[0];
+  for (var idx = 1; idx < arr.length; idx++) {
     if (arr[idx] > max) {
       max = arr[idx];
     }
@@ -109,6 +110,9 @@ function printArrayMax(arr) {
 
   console.log('Max value is:', max);
 }
+
+// printArrayMax([52, 21, 72, 59, 75, 8, 41, 99, 15, 23]);
+// printArrayMax([-52, -21, -72]);
 
 /*
   6. Get and Print Average
@@ -119,16 +123,23 @@ function printArrayMax(arr) {
   ex. output: 2.5
 */
 
-arr = [1, 4, 7, 2, 5, 8];
-if (arr.length == 0) {
-  console.log('[ ], no avg val.');
-  return;
+let arr1 = [1, 2, 3, 4];
+
+function printAverageOfArray(arr) {
+  // edge case
+  if (arr.length == 0) {
+    console.log('[ ], no avg val.');
+    return;
+  }
+
+  var sum = arr[0];
+  for (var idx = 1; idx < arr.length; idx++) {
+    sum += arr[idx];
+  }
+  console.log('Avg val:', sum / arr.length);
 }
-var sum = arr[0];
-for (var idx = 1; idx < arr.length; idx++) {
-  sum += arr[idx];
-}
-console.log('Avg val:', sum / arr.length);
+
+// printAverageOfArray(arr1);
 
 /*
   7. Array with Odds
@@ -144,8 +155,12 @@ function oddArray1to255() {
   var oddArray = [];
   for (var num = 1; num <= 255; num += 2) {
     oddArray.push(num);
+    // oddArray[oddArray.length] = num;
   }
+  return oddArray;
 }
+
+console.log(oddArray1to255());
 
 /*
   8. Square the Values
